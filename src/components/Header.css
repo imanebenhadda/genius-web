@@ -1,0 +1,127 @@
+.header {
+  position: fixed;
+  font-family: Proxima Nova, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  top: 0;
+  width: 100%;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+  z-index: 1000;
+  height: 70px; /* Reduced header height */
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+  height: 100%;
+}
+
+.logo img {
+  height: 50px; /* Smaller logo size */
+  max-width: 150px;
+  margin-top: 10px; /* Adjust logo position to go a bit down */
+}
+
+.header.scrolled {
+  background-color: #000;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  gap: 60px;
+} 
+
+.main-nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 30px; 
+  font-weight: 600; 
+  font-family: "Poppins", Arial, sans-serif; 
+  transition: color 0.3s ease;
+}
+
+.main-nav ul li a:hover {
+  color: #f1c40f;
+}
+.menu-icon, .mobile-menu{
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    height: 60px;
+  }
+
+  .header-container {
+    flex-direction: row; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 10px 15px;
+  }
+
+  .logo img {
+    height: 40px; 
+    max-width: 120px;
+  }
+  .main-nav {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+  }
+ 
+  .mobile-menu .close-menu {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+    z-index: 1001;
+  }
+  
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color:  rgba(1, 33, 54, .9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+  }
+
+  .mobile-menu.open {
+    transform: translateX(0);
+  }
+
+  .mobile-menu a {
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .mobile-menu a:hover {
+    color: #f1c40f;
+  }
+}
+
